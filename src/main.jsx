@@ -12,7 +12,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('https://chef-server.vercel.app/chef')
       }
     ]
   }
@@ -20,6 +21,19 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
+
+
+
+/****
+ * 1
+ * 2
+ * 3
+ * 4x
+ * 5x
+ * 6x
+ * 
+ * 
+ * ****/ 

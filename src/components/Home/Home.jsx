@@ -1,10 +1,13 @@
-import React from 'react';
+import Banner from "../Banner/Banner";
+import Sec2 from "../Sec2/Sec2";
+
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Banner></Banner>
+            <Sec2></Sec2>
+        </>
     );
 };
 
