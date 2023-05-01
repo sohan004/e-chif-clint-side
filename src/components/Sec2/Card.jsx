@@ -1,14 +1,18 @@
 import React from 'react';
+import { AiOutlineLike } from "react-icons/ai";
 
-const Card = () => {
+const Card = ({ d }) => {
+    const { name, picture, experience, likes, recipes } = d
     return (
         <div className='col-12 col-md-6 col-lg-4'>
-            <div className="card" >
-                <img src="..." className="card-img-top" alt="..." />
+            <div className="card p-4 bg-light" >
+                <img src={picture} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <h5 className='mb-3'>{name}</h5>
+                    <p className='fw-bolder text-secondary mb-1'>Experiance: <span className='fw-normal'>{experience} years</span></p>
+                    <p className='fw-bolder text-secondary mb-1'>Recipes: <span className='fw-normal'>{recipes.length}</span></p>
+                    <p className=' text-secondary mb-1 fs-5'>{likes} <AiOutlineLike/></p>
+                    <a href="#" className="btn btn-warning mt-4">View Recipes</a>
                 </div>
             </div>
         </div>

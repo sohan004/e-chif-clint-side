@@ -28,9 +28,10 @@ const Banner = () => {
         <div className='row g-3 d-flex align-items-center'>
             <div className="col-12 col-md-6">
                 <div >
-                    <h1 className='display-4 fw-semibold'>
+                    <h1 className='display-4 mb-3 fw-semibold'>
                         Cook Like a Chef: Expert Techniques and <span className='text-warning fw-bolder'>Delicious Recipes</span>
                     </h1>
+                    <p >Welcome to our chef-led website, where we offer a wealth of culinary knowledge, inspiration, and community to help you elevate your cooking game. Our website is designed to provide food lovers with expert recipes, cooking tips, and techniques from a professional chef, along with the tools and resources you need to master the art of cooking.</p>
                 </div>
             </div>
             <div className="col-12 col-md-6">
