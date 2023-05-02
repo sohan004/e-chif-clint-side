@@ -1,8 +1,9 @@
 import React from 'react';
 import { AiOutlineLike } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 const Card = ({ d }) => {
-    const { name, picture, experience, likes, recipes } = d
+    const { name, picture, experience, likes, recipes, id } = d
     return (
         <div className='col-12 col-md-6 col-lg-4'>
             <div className="card p-4 bg-light" >
@@ -12,7 +13,7 @@ const Card = ({ d }) => {
                     <p className='fw-bolder text-secondary mb-1'>Experiance: <span className='fw-normal'>{experience} years</span></p>
                     <p className='fw-bolder text-secondary mb-1'>Recipes: <span className='fw-normal'>{recipes.length}</span></p>
                     <p className=' text-secondary mb-1 fs-5'>{likes} <AiOutlineLike/></p>
-                    <a href="#" className="btn btn-warning mt-4">View Recipes</a>
+                    <Link to={`/chef/${id}`} className="btn btn-warning mt-4">View Recipes</Link>
                 </div>
             </div>
         </div>

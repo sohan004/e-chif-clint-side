@@ -5,6 +5,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
 import ErorPage from './components/Erorpage/ErorPage.jsx'
+import Details from './components/Details/Details.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         loader: () => fetch('https://chef-server.vercel.app/chef')
+      },
+      {
+        path: '/chef/:id',
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`https://chef-server.vercel.app/chef/${params.id}`)
       }
     ]
   },
