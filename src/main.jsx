@@ -9,6 +9,7 @@ import Details from './components/Details/Details.jsx'
 import Log from './components/Account/Log.jsx'
 import Signup from './components/Account/Signup.jsx'
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx'
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef/:id',
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: ({ params }) => fetch(`https://chef-server.vercel.app/chef/${params.id}`)
       }
     ]
