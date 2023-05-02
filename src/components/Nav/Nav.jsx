@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import { AuthContex } from '../AuthProvider/AuthProvider';
 
 const Nav = () => {
+    const { user, out } = useContext(AuthContex)
+    const getOut = () => {
+        out().then().catch()
+    }
     return (
         <>
             <nav className="navbar navbar-expand-lg py-2 mb-5">
@@ -21,14 +26,15 @@ const Nav = () => {
                                 <NavLink className={({ isActive }) => `nav-link active ${isActive && 'text-primary'}`} aria-current="page" to="/blog">Blog</NavLink>
                             </li>
                         </ul>
-                        <img id='ttip' src="https://cdn-icons-png.flaticon.com/512/149/149071.png" style={{ width: '50px' }} alt="" className="img-fluid rounded-circle me-3" />
-                        <ReactTooltip
+                        {user && <img id='ttip' src={user.photoURL} style={{ width: '50px' }} alt="" className="img-fluid rounded-circle me-3" />}
+                        { user && <ReactTooltip
                             anchorId="ttip"
                             place="bottom"
                             variant="info"
-                            content="I'm a info tooltip"
-                        />
-                        <Link to="/log_in"><button className="btn btn-warning" type="submit">Log in</button></Link>
+                            content={user.displayName}
+                        />}
+                        {!user && <Link to="/log_in"><button className="btn btn-warning" type="submit">Log in</button></Link>}
+                        {user && <button onClick={getOut} className="btn btn-danger" >Log out</button>}
                     </div>
                 </div>
             </nav>
