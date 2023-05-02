@@ -23,7 +23,7 @@ const Nav = () => {
                                 <NavLink className={({ isActive }) => `nav-link active ${isActive && 'text-primary p-2 border-bottom'}`} aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item me-4 fw-bolder">
-                                <NavLink className={({ isActive }) => `nav-link active ${isActive && 'text-primary'}`} aria-current="page" to="/blog">Blog</NavLink>
+                                <NavLink className={({ isActive }) => `nav-link active ${isActive && 'text-primary p-2 border-bottom'}`} aria-current="page" to="/blog">Blog</NavLink>
                             </li>
                         </ul>
                         {user && <img id='ttip' src={user.photoURL} style={{ width: '50px' }} alt="" className="img-fluid rounded-circle me-3" />}

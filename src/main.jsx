@@ -10,6 +10,7 @@ import Log from './components/Account/Log.jsx'
 import Signup from './components/Account/Signup.jsx'
 import AuthProvider from './components/AuthProvider/AuthProvider.jsx'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx'
+import Blog from './components/Blog/Blog.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/log_in',
         element: <Log></Log>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
       },
       {
         path: '/Sign_up',
