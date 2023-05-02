@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
+import ErorPage from './components/Erorpage/ErorPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         loader: () => fetch('https://chef-server.vercel.app/chef')
       }
     ]
+  },
+  {
+    path: '*',
+    element: <ErorPage></ErorPage>
   }
 ])
 
