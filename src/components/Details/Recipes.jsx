@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaStar } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Recipes = ({ r }) => {
     const { recipeName, cookingMethod, img, ingredients, ratings } = r
+
+    const [isDisabled, setIsDisabled] = useState(false);
+
+    const handleClick = () => {
+        toast.success(`My Favoroute Recipe is ${recipeName}`, {
+            position: toast.POSITION.TOP_CENTER
+        });
+        setIsDisabled(true);
+    };
     return (
         <div className='col-12 col-md-6'>
             <div className="card p-4 h-100" >
@@ -13,9 +24,9 @@ const Recipes = ({ r }) => {
                     <ul>
                         {ingredients.map((i, idx) => <li key={idx}>{i}</li>)}
                     </ul>
-                    <p className="card-text"><span className='fw-bolder'>Coocking Method:</span> {cookingMethod}</p> 
-                    <h4 className="card-text"><span className='fw-bolder text-warning'><FaStar/></span> {ratings}</h4> 
-                    <button  className="btn btn-warning mt-3 position-sticky top-100">Favourite</button>
+                    <p className="card-text"><span className='fw-bolder'>Coocking Method:</span> {cookingMethod}</p>
+                    <h4 className="card-text"><span className='fw-bolder text-warning'><FaStar /></span> {ratings}</h4>
+                    <button disabled={isDisabled} onClick={handleClick} className="btn btn-warning mt-3 position-sticky top-100">Favourite</button>
                 </div>
             </div>
         </div>

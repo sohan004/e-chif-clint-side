@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip as ReactTooltip } from "react-tooltip";
 
@@ -28,7 +28,7 @@ const Nav = () => {
                             variant="info"
                             content="I'm a info tooltip"
                         />
-                        <button className="btn btn-warning" type="submit">Log in</button>
+                        <Link to="/log_in"><button className="btn btn-warning" type="submit">Log in</button></Link>
                     </div>
                 </div>
             </nav>

@@ -6,6 +6,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
 import ErorPage from './components/Erorpage/ErorPage.jsx'
 import Details from './components/Details/Details.jsx'
+import Log from './components/Account/Log.jsx'
+import Signup from './components/Account/Signup.jsx'
+import AuthProvider from './components/AuthProvider/AuthProvider.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,9 +21,17 @@ const router = createBrowserRouter([
         loader: () => fetch('https://chef-server.vercel.app/chef')
       },
       {
+        path: '/log_in',
+        element: <Log></Log>
+      },
+      {
+        path: '/Sign_up',
+        element: <Signup></Signup>
+      },
+      {
         path: '/chef/:id',
         element: <Details></Details>,
-        loader: ({params}) => fetch(`https://chef-server.vercel.app/chef/${params.id}`)
+        loader: ({ params }) => fetch(`https://chef-server.vercel.app/chef/${params.id}`)
       }
     ]
   },
@@ -32,7 +43,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
 

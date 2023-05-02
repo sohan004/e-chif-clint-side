@@ -26,7 +26,7 @@ const Sec4 = () => {
     };
     return (
         <div>
-            <h1 className="fw-bolder text-center mt-5 pt-5 mb-4">Our Happy Client Says</h1>
+            <h1 className="fw-bolder text-center mt-5 pt-5 mb-4">Our Happy Customer Says</h1>
             <div className="row g-4 d-flex align-items-center">
                 <div className="col-12 col-md-6">
                     <div>

@@ -9,7 +9,7 @@ class ErorPage extends Component {
                 <div className='row d-flex align-items-center g-3'>
                     <div className="col-12 col-md-6">
                         <div>
-                            <img src={erorPage} className='img.fluid ' alt="" />
+                            <img src={erorPage} className='img-fluid ' alt="" />
 
                         </div>
                     </div>

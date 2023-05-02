@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Nav from './components/Nav/Nav'
 import { Outlet, useNavigation } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   const navigation = useNavigation()
@@ -18,6 +19,7 @@ function App() {
         </div>
       </div>}
       {navigation.state != 'loading' && <Outlet></Outlet>}
+      <ToastContainer></ToastContainer>
     </div>
   )
 }
