@@ -5,12 +5,14 @@ import './App.css'
 import Nav from './components/Nav/Nav'
 import { Outlet, useNavigation } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import Footer from './components/Footer/Footer'
 
 function App() {
   const navigation = useNavigation()
   const [count, setCount] = useState(0)
 
   return (
+    <>
     <div className='container'>
       <Nav></Nav>
       {navigation.state === 'loading' && <div className="d-flex mt-5 text-primary justify-content-center">
@@ -21,6 +23,8 @@ function App() {
       {navigation.state != 'loading' && <Outlet></Outlet>}
       <ToastContainer></ToastContainer>
     </div>
+      {navigation.state != 'loading' && <Footer></Footer>}
+    </>
   )
 }
 

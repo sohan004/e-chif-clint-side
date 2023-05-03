@@ -3,6 +3,7 @@ import './Log.css'
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../AuthProvider/AuthProvider';
+import gif from '../../assets/login.gif'
 
 const Log = () => {
     const { google, git, login } = useContext(AuthContex)
@@ -45,7 +46,7 @@ const Log = () => {
 
     return (
         <div className=''>
-            <div className='mt-5 bg-white p-3 rounded d-flex flex-column flex-md-row'>
+            <div className='mt-5 bg-white p-3 rounded d-flex flex-column align-items-center gap-3 flex-md-row'>
                 <div className='w-100 w-md-50'>
                     <h3 className='text-center'>Please Log in First</h3>
                     <p className="text-danger">{err}</p>
@@ -71,7 +72,7 @@ const Log = () => {
                     <p className='text-center my-3'>You have no account please <Link to="/sign_up">Register</Link></p>
                 </div>
                 <div className='w-100 w-md-50'>
-
+                    <img src={gif} alt="" className="img-fluid w-100" />
                 </div>
             </div>
         </div>

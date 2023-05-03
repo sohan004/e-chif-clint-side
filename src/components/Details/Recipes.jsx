@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReactStarsRating from 'react-awesome-stars-rating';
 
 const Recipes = ({ r }) => {
     const { recipeName, cookingMethod, img, ingredients, ratings } = r
@@ -25,7 +26,8 @@ const Recipes = ({ r }) => {
                         {ingredients.map((i, idx) => <li key={idx}>{i}</li>)}
                     </ul>
                     <p className="card-text"><span className='fw-bolder'>Coocking Method:</span> {cookingMethod}</p>
-                    <h4 className="card-text"><span className='fw-bolder text-warning'><FaStar /></span> {ratings}</h4>
+                    <h5 className="card-text"><ReactStarsRating isEdit={false}  size={20} value={ratings} /> {ratings}</h5>
+                    
                     <button disabled={isDisabled} onClick={handleClick} className="btn btn-warning mt-3 position-sticky top-100">Favourite</button>
                 </div>
             </div>

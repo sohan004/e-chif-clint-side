@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import gif from '../../assets/login.gif'
 
 const Signup = () => {
     const { google, git, login, signup, updt, out } = useContext(AuthContex)
@@ -45,7 +46,7 @@ const Signup = () => {
     }
     return (
         <div className='container'>
-            <div className='mt-5 bg-white p-3 rounded d-flex flex-column flex-md-row'>
+            <div className='mt-5 bg-white p-3 rounded d-flex flex-column gap-3 align-items-center flex-md-row'>
                 <div className='w-100 w-md-50'>
                     <h3 className='text-center'>Please Sign in First</h3>
 
@@ -72,7 +73,7 @@ const Signup = () => {
                     <p className='text-center my-3'>Already you have account please <Link to="/log_in">sign in</Link></p>
                 </div>
                 <div className='w-100 w-md-50'>
-
+                <img src={gif} alt="" className="img-fluid w-100" />
                 </div>
             </div>
         </div>
