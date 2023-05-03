@@ -3,12 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { AuthContex } from '../AuthProvider/AuthProvider';
+import userImg from '../../assets/blank-profile-picture-gb085c28e0_1280.png'
 
 const Nav = () => {
     const { user, out } = useContext(AuthContex)
     const getOut = () => {
         out().then().catch()
     }
+
+    const phourl = user?.photoURL || null
     return (
         <>
             <nav className="navbar navbar-expand-lg py-2 mb-5">
@@ -26,8 +29,8 @@ const Nav = () => {
                                 <NavLink className={({ isActive }) => `nav-link active ${isActive && 'text-primary p-2 border-bottom'}`} aria-current="page" to="/blog">Blog</NavLink>
                             </li>
                         </ul>
-                        {user && <img id='ttip' src={user.photoURL} style={{ width: '50px' }} alt="" className="img-fluid rounded-circle me-3" />}
-                        { user && <ReactTooltip
+                        {user && <img id='ttip' src={phourl ? phourl : userImg} style={{ width: '50px' }} alt="" className="img-fluid rounded-circle me-3" />}
+                        {user && <ReactTooltip
                             anchorId="ttip"
                             place="bottom"
                             variant="info"
