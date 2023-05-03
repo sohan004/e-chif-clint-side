@@ -8,7 +8,7 @@ const Blog = () => {
         <>
             <div className='text-center mb-4'>
                 <PDFDownloadLink document={<Pdf />} fileName='QNA'>
-                    {({ loading }) => loading ? <button className="btn btn-primary">Loading Document...</button> : <button className="btn btn-primary">Download pdf</button>}
+                    <button className="btn btn-primary">Download pdf</button>
                 </PDFDownloadLink>
             </div>
             <div>
