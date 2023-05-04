@@ -29,7 +29,7 @@ const Nav = () => {
                                 <NavLink className={({ isActive }) => `nav-link active ${isActive && 'text-primary p-2 border-bottom'}`} aria-current="page" to="/blog">Blog</NavLink>
                             </li>
                         </ul>
-                        {user && <img id='ttip' src={phourl ? phourl : userImg} style={{ width: '50px' }} alt="" className="img-fluid rounded-circle me-3" />}
+                        {user && <img id='ttip' src={phourl ? phourl : userImg} style={{ width: '50px' , height: '50px'}} alt="" className="img-fluid rounded-circle me-3" />}
                         {user && <ReactTooltip
                             anchorId="ttip"
                             place="bottom"
